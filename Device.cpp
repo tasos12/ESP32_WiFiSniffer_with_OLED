@@ -7,15 +7,6 @@ Device::Device(){
   vendor = "";
 }
 
-void Device::setMac(uint8_t targetMac[6]){
-  for(int i=0;i<6;i++)
-    mac[i] = targetMac[i];
-}
-
-void Device::setVendor(String ven){
-  vendor = ven;
-}
-
 bool Device::compare(uint8_t targetMac[6]){
   for(int i=0;i<6;i++){
     if(mac[i] != targetMac[i]) return false;
@@ -33,5 +24,14 @@ uint8_t Device::getMacPart(int num){
 
 String Device::getVendor(){
   return vendor;
+}
+
+void Device::setMac(uint8_t targetMac[6]){
+  for(int i=0;i<6;i++)
+    mac[i] = targetMac[i];
+}
+
+void Device::setVendor(String ven){
+  vendor = ven;
 }
 

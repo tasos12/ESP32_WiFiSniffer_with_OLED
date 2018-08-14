@@ -3,6 +3,7 @@
 
 #include "data.h"
 
+/*----------Functions take by https://github.com/spacehuhn/esp8266_deauther functions.h-----------------------------*/
 String bytesToStr(uint8_t* b, uint32_t size) {
     String str;
 

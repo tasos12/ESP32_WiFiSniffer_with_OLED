@@ -47,6 +47,9 @@ void wifi_sniffer_packet_handler(void *buff, wifi_promiscuous_pkt_type_t type) {
   Serial.println();
 }
 
+/* Brief: Adds the device to the device list of the sniffed network
+ * Params: uint8_t devicep[6]: Mac address of the device to be added
+ */
 void addDevicetoList(uint8_t device[6]) {
 
   if (connectedDevices.contains(device) == -1) {
@@ -114,6 +117,8 @@ void initOLED() {
   display.init();
 }
 
+/*Brief: Displays the devices found at the OLED screen
+ */
 void displayDevices(){
   display.clear();
   display.drawString(0, 1, "Devices: ");
