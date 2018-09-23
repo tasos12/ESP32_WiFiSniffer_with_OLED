@@ -18,6 +18,13 @@ void Device::getMac(uint8_t* targetMac){
   targetMac = mac;
 }
 
+String Device::getMac2String(){
+  String address;
+  for(int i=0;i<6;i++)
+    address += getMacPart(i);
+  return address;
+}
+
 uint8_t Device::getMacPart(int num){
   return mac[num];
 }
@@ -31,7 +38,12 @@ void Device::setMac(uint8_t targetMac[6]){
     mac[i] = targetMac[i];
 }
 
-void Device::setVendor(String ven){
-  vendor = ven;
+void Device::setVendor(String targetVendor){
+  vendor = targetVendor;
+}
+
+void Device::setDevInfo(uint8_t targetMac[6], String targetVendor){
+  setMac(targetMac);
+  setVendor(targetVendor);
 }
 

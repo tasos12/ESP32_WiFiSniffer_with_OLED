@@ -16,7 +16,7 @@ class DeviceList {
    Device  getDevice(int i);
 
   private:
-    LinkedList<Device> list;
+    LinkedList<Device>* list = new LinkedList<Device>();
 };
 
 #endif
